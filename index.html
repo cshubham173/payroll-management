@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+	<title>PAYROLL MANAGEMENT</title>
+	<link rel="stylesheet" href="styles/style_login.css" type="text/css" media="all" >
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  </head>
+
+  <body style="font-family: 'Noto Sans', sans-serif;">
+
+	<div class="form-box" id="frm">
+	<h2 style="text-align: center;">PAYROLL MANAGEMENT SERVICES</h2>
+
+  <form action="process.php" method="post">
+      <script type="text/javascript">
+      function myFunction(){
+        var x=document.getElementById("myInput");
+        var y=document.getElementById("hide1");
+        var z=document.getElementById("hide2");
+
+        if(x.type == 'password'){
+            x.type = "text";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+        else{
+            x.type = "password";
+            y.style.display = "block";
+            z.style.display = "none";
+        }
+      }
+    </script>
+	<div class="input-box">
+		<i class="fa fa-id-card"></i>
+		<input type="text" placeholder="User ID" name="user">
+	</div>
+	<div class="input-box">
+		<i class="fa fa-key"></i>
+		<input type="password" id="myInput" placeholder="Password" name="pass">
+		<span class="eye" onclick="myFunction();" >
+			<i id="hide1" class="fa fa-eye"></i>
+			<i id="hide2" class="fa fa-eye-slash"></i>
+		</span>
+	</div>
+  <div align="center">
+    <label>Admin </label><input type="radio" name="entity" value="admin">
+    <label>Employee</label><input type="radio" name="entity" value="emp" checked>
+  </div>
+
+	<button type="submit" class="login-btn" id="btn">LOGIN</button>
+	</div>
+  </form>
+
+
+
+  </body>
+</html>
