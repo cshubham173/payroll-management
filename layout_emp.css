@@ -1,0 +1,335 @@
+/*----------------------------POP UP BOX TO SHOW INFORMATION OF EMPLOYEE-------------------*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  height: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Popup box BEGIN */
+/*--------------------------------------------------------------------------------------*/
+
+
+
+.employee_display{
+  top: 100px;
+}
+/*-------------------------------------SEARCH BUTTON AND BAR AND ALL OTHER BUTTONS-------------------*/
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align: center;
+}
+
+.searchTerm {
+  width: 150%;
+  border: 3px solid #458500;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #458500;
+}
+
+.searchButton {
+  width: 100px;
+  height: 20px;
+  border: 1px solid #458500;
+  background: #458500;
+  text-align: center;
+  color: #FFFFFF;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 40%;
+  position: absolute;
+  top: 25%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar{
+  margin: 0;
+}
+
+body{margin:0; padding:0; font-size:13px; font-family: 'Noto Sans', sans-serif, Times, serif;color:#FFFFFF; background-color:#458500;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; width:100%; clear:both;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+code{font-weight:normal; font-style:normal; font-family: 'Noto Sans', sans-serif, Times, serif;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+.imgholder, .imgl, .imgr{padding:4px; border:1px solid #D6D6D6; text-align:center;}
+.imgl{float:left; margin:0 15px 15px 0; clear:left;}
+.imgr{float:right; margin:0 0 15px 15px; clear:right;}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
+
+q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+q:before{content:'� '; font-size:26px;}
+q:after{content:' �'; font-size:26px; line-height:0;}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
+
+.row1, .row1 a{color:#FFFFFF; background-color:#458500;}
+.row2{color:#979797; background-color:#FFFFFF;}
+.row2 a{color:#FF9900; background-color:#FFFFFF;}
+.row3, .row3 a{color:#FFFFFF; background-color:#1E1E1E;}
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+#header, #container, #footer{display:block; margin:0 auto; width:960px;}
+
+nav ul{margin:0; padding:0; list-style:none;}
+
+h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:20px; font-weight:normal; font-style:normal; line-height:normal;}
+
+/*----------------------------------------------Header-------------------------------------*/
+
+#header, #header a{color:#FFFFFF; background-color:#458500;}
+
+#header #hgroup{float:left; padding:20px 0;}
+#header #hgroup h1, #header #hgroup h2{}
+#header #hgroup h1{font-size:36px;  font-family: 'Noto Sans', sans-serif, Times, serif; }
+#header #hgroup h2{font-size:13px;}
+
+#header nav{float:right; padding:20px 0;}
+#header nav ul{margin-top:20px;}
+#header nav li{display:inline; margin-right:15px; text-transform:uppercase;}
+#header nav li.last{margin-right:0;}
+#header nav a{color:#FFFFFF; background-color:#458500;}
+#header nav a:hover{color:#FF9900; background-color:#458500;}
+
+/*----------------------------------------------Content Area-------------------------------------*/
+
+#container{padding:0 0;}
+#container section{margin:0 0 0 0;}
+#container section.last{margin:0;}
+#container .more{text-align:right; text-transform:uppercase; font-size:smaller; font-weight:bold;}
+
+/* ------Left Column-----*/
+
+#container #left_column{float:left; width:280px;}
+#container #left_column h2.title{margin-bottom:20px; color: #458500;}
+
+#container #left_column nav{display:block; width:100%; margin-bottom:30px;}
+#container #left_column nav ul{margin:0; padding:0; list-style:none;}
+#container #left_column nav li{margin:0 0 3px 0; padding:0;}
+#container #left_column nav li.last{margin-bottom:0;}
+#container #left_column nav a{display:block; margin:0; padding:5px 10px 5px 20px; color:#666666; background:url("../images/orange_file.gif") no-repeat 10px center #FFFFFF; text-decoration:none; border-bottom:1px dotted #666666;}
+#container #left_column nav a:hover{color:#FF9900; background-color:#FFFFFF;}
+
+/* ------Main Content-----*/
+
+#container #content{float:right; width:630px;}
+
+#container #content section article{}
+#container #content section article h2{text-transform:uppercase;}
+#container #content section article address{font-size:10px; font-style:normal;}
+#container #content section article time{font-size:10px;}
+#container #content section article .tags{display:block; padding:5px; color:#979797; background-color:#ECECEC; font-style:italic;}
+#container #content section article .tags a{color:#FF9900; background-color:#ECECEC;}
+
+#container #content #services{}
+#container #content #services ul{margin:0; padding:0; list-style:none;}
+#container #content #services ul li{display:block; width:300px;}
+#container #content #services ul li.odd{float:left;}
+#container #content #services ul li.even{float:right;}
+#container #content #services ul li img{width:290px; height:100px; margin:0 0 15px 0; padding:4px; border:1px solid #666666;}
+
+.title{
+  display: inline-block;
+  /*background: green;*/
+  color: #FFFFFF;
+}
+
+.prof td{
+  color: #47ae32;
+}
+/*----------------------------------------------Footer-------------------------------------*/
+
+#footer{}
+#footer p{margin:0; padding:20px 0;}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.srchbar input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  height: 36px;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.srchbar button {
+  float: left;
+  width: 20%;
+  height: 20%;
+  padding: 2px;
+  background: #458500;
+  color: white;
+  font-size: 25px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.srchbar button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.srch::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table#table1 {
+   width:40%;
+   margin-top: 0px;
+   margin-left:60%;
+   margin-right:15%;
+ }
+
+ table#table2 {
+    width:40%;
+    margin-top: 0px;
+    margin-left:35%;
+    margin-right:15%;
+  }
+
+ /*--------------ADD NEW ENTRY-----------------*/
+
+ .addnew {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=email], input[type=date],input[type=cont], select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}*/
+
+input[type=text]:focus, input[type=password]:focus, select{
+  background-color: #ddd;
+  outline: none;
+}
+
+.addbtn {
+  background-color: #458500;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.addbtn:hover {
+  opacity:1;
+}
+
+.strip{
+  height: 150px;
+  width: 100%;
+  background-color: #458500;
+}
+
+/*------------------------------------------------*/
+
+/* Style inputs with type="text", select elements and textareas */
+.calsal {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+.back{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+.back:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.salbox {
+  border-radius: 5px;
+  /*background-color: #f2f2f2;*/
+  padding: 20px;
+}
